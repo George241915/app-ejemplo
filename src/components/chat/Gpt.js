@@ -15,7 +15,7 @@ const ChatScreen = () => {
     <View style={styles.container}> 
       <TextInput
         value={message}
-        onChangeText={setInputMessage}
+        onChangeText={setInputMessage} keyboardType='numeric' 
         placeholder="Escribe tu mensaje"
       />
       <Button title="Enviar" onPress={handleSendMessage} />
