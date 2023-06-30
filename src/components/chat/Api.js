@@ -41,8 +41,10 @@ const fetchChatGPTResponse = async (message) => {
         'Authorization': 'Bearer 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',
       },
     });
+    const tokensConsumidos = response.data.usage.total_tokens;
+    return response.data.choices[0].text + " /tokens consumidos /" + tokensConsumidos;
+    
 
-    return response.data.choices[0].text;
   } catch (error) {
     console.error('Error al obtener la respuesta de ChatGPT:', error);
     return null;
