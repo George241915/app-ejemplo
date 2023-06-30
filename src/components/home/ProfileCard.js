@@ -7,18 +7,19 @@ const twitter = <Icon name="twitter" size={50} color={"black"}></Icon>
 const facebook = <Icon name="facebook" size={50} color={"black"}></Icon>
 const instagram = <Icon name="instagram" size={50} color={"black"}></Icon>
 const linkedin = <Icon name="linkedin" size={50} color={"black"}></Icon>
+const tiktok = <Icon name="tiktok" size={50} color={"black"}></Icon>
 
 const ProfileCard = () =>{
     const user = {
-        avatar: "https://images.unsplash.com/photo-1511367461989-f85a21fda167?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZmlsZXxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80",
-        coverPhoto:"https://wallpapers.com/images/hd/profile-picture-background-10tprnkqwqif4lyv.jpg",
+        avatar: '../../../assets/avatar.png',
+        coverPhoto:"https://images.unsplash.com/photo-1605548109944-9040d0972bf5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
         name: "Jorge Erazo" 
     }
     return(
         <View style= {styles.container }>
             <Image source={{uri: user.coverPhoto}} style={styles.coverPhoto}/>
             <View style ={styles.avatarContainer}>
-            <Image source={{uri: user.avatar}} style={styles.avatar}/>
+            <Image source={require('../../../assets/avatar.png')} style={styles.avatar}/>
             <Text style={styles.name}>
                 {user.name}
             </Text>
@@ -33,6 +34,9 @@ const ProfileCard = () =>{
                 {instagram}
             </Text><Text style={{color: "blue"}} onPress={() => Linking.openURL("https:www.linkedin.com") }>
                 {linkedin}
+            </Text>
+            <Text style={{color: "blue"}} onPress={() => Linking.openURL("https:www.tiktok.com") }>
+                {tiktok}
             </Text>
             </View>
         </View>
