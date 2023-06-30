@@ -7,7 +7,7 @@ const fetchChatGPTResponse = async (message) => {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        Authorization: 'Bearer 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',
+        
       },
       body: JSON.stringify({
         model: "text-davinci-003",
@@ -38,7 +38,7 @@ const fetchChatGPTResponse = async (message) => {
     }, {
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': 'Bearer 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',
+        'Authorization': ,
       },
     });
 
