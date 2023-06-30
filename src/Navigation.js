@@ -4,6 +4,7 @@ import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityI
 import Menu from "./components/home/Menu";
 import ListComponent from "./components/list/List";
 import Nombres from "./components/nombre/Nombre";
+import ChatScreen from "./components/chat/Gpt";
 
 const Tab = createBottomTabNavigator();
 
@@ -27,6 +28,13 @@ const Navigation = () => {
             </Tab.Screen>
             <Tab.Screen name="Nombre" component={Nombres} options={{
                 tabBarLabel: "Nombre",
+                tabBarIcon: ({color, size}) => {
+                    <MaterialCommunityIcons name="apple" color={color} size={size}/>
+                }
+            }}>
+            </Tab.Screen>
+            <Tab.Screen name="GPT" component={ChatScreen} options={{
+                tabBarLabel: "GPT",
                 tabBarIcon: ({color, size}) => {
                     <MaterialCommunityIcons name="apple" color={color} size={size}/>
                 }
