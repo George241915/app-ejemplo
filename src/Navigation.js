@@ -33,8 +33,8 @@ const Navigation = () => {
                 }
             }}>
             </Tab.Screen>
-            <Tab.Screen name="GPT" component={ChatScreen} options={{
-                tabBarLabel: "GPT",
+            <Tab.Screen name="OpenAi" component={ChatScreen} options={{
+                tabBarLabel: "OpenAi",
                 tabBarIcon: ({color, size}) => {
                     <MaterialCommunityIcons name="apple" color={color} size={size}/>
                 }

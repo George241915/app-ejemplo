@@ -9,7 +9,10 @@
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#ffffff",
+      "webpack": {
+        "port": 9008
+      }
     },
     "assetBundlePatterns": [
       "**/*"

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, TextInput, Button, Text } from 'react-native';
+import { View, TextInput, Button, Text, StyleSheet } from 'react-native';
 import fetchChatGPTResponse from './Api';
 
 const ChatScreen = () => {
@@ -7,12 +7,12 @@ const ChatScreen = () => {
   const [outputMessage, setOutputMessage] = useState('');
 
   const handleSendMessage = async () => {
-    const response = await fetchChatGPTResponse(message);
+    const response = await fetchChatGPTResponse('Eres un convertidor binario y dime el binario de' + message);
     setOutputMessage(response);
   };
 
   return (
-    <View>
+    <View style={styles.container}> 
       <TextInput
         value={message}
         onChangeText={setInputMessage}
@@ -23,5 +23,13 @@ const ChatScreen = () => {
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+      backgroundColor: "#E8EAED",
+      display: "flex",
+      alignItems: "center"
+    },
+  });
 
 export default ChatScreen;

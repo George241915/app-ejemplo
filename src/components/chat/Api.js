@@ -31,14 +31,14 @@ const apiUrl = 'https://api.openai.com/v1/completions';
 const fetchChatGPTResponse = async (message) => {
   try {
     const response = await axios.post(apiUrl, {
-        model: 'text-davinci-003',
+      model: 'text-davinci-003',
       prompt:  message,
       temperature: 0, // Ajusta la temperatura según tus preferencias
       max_tokens: 50, // Define la longitud máxima de la respuesta generada
     }, {
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': ,
+        'Authorization': 'Bearer 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',
       },
     });
 
