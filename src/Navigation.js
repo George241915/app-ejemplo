@@ -40,6 +40,13 @@ const Navigation = () => {
                 }
             }}>
             </Tab.Screen>
+            <Tab.Screen name="ChatPDF" component={ChatScreen} options={{
+                tabBarLabel: "ChatPDF",
+                tabBarIcon: ({color, size}) => {
+                    <MaterialCommunityIcons name="apple" color={color} size={size}/>
+                }
+            }}>
+            </Tab.Screen>
         </Tab.Navigator>
     )
 }

@@ -1,6 +1,6 @@
 import React from "react";
 import { Image, Linking, StyleSheet, Text, View } from "react-native";
-import Icon from "react-native-vector-icons/FontAwesome";
+import Icon from "react-native-vector-icons/FontAwesome5";
 
 
 const twitter = <Icon name="twitter" size={50} color={"black"}></Icon>
