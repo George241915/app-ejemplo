@@ -2,7 +2,29 @@ import React, { useState } from 'react';
 import { OpenAI } from 'langchain/llms/openai';
 import { BufferMemory } from "langchain/memory";
 import { ConversationChain } from "langchain/chains";
+//import { PDFLoader } from "langchain/document_loaders/fs/pdf";
+/*import { RecursiveCharacterTextSplitter } from "langchain/text_splitter";
+import { OpenAIEmbeddings } from "langchain/embeddings/openai";
+import { MemoryVectorStore } from "langchain/vectorstores/memory";
+import { RetrievalQAChain } from "langchain/chains";
+import { ChatOpenAI } from "langchain/chat_models/openai";*/
 
+/*const loader = new PDFLoader("src/document_loaders/example_data/example.pdf", {
+  splitPages: false,
+});
+
+const docs = await loader.load();
+
+const textSplitter = new RecursiveCharacterTextSplitter({
+  chunkSize: 500,
+  chunkOverlap: 0,
+});
+
+const splitDocs = await textSplitter.splitDocuments(docs);
+
+const embeddings = new OpenAIEmbeddings();
+
+const vectorStore = await MemoryVectorStore.fromDocuments(splitDocs, embeddings);*/
 
 const llm = new OpenAI({
     openAIApiKey: "",
@@ -10,11 +32,18 @@ const llm = new OpenAI({
     maxTokens: 50,    
   });
 
+ /* const model = new ChatOpenAI({ modelName: "gpt-3.5-turbo" });
+const chain = RetrievalQAChain.fromLLM(model, vectorstore.asRetriever());
+
+const response = await chain.call({
+  query: "What is task decomposition?"
+});
+
+console.log(response);*/
+
 const ChatPDF = () => {
   const [question, setQuestion] = useState('');
-  const [question1, setQuestion1] = useState('');
   const [answer, setanswer] = useState('');
-  const [answer1, setanswer1] = useState('');
 
   const onQuestionChange = (event) => {
     setQuestion(event.target.value);
@@ -33,11 +62,10 @@ const ChatPDF = () => {
     const chain = new ConversationChain({ llm: llm, memory: memory });
     const response = await chain.call({input: question});
     console.log({response})
-    const response1 = await chain.call({input: question1});
 
     // Obtén la respuesta a la pregunta
     setanswer(response["response"]);
-    setanswer1(response1["response"]);
+    
   };
 
   return (
@@ -49,12 +77,7 @@ const ChatPDF = () => {
       />
       
       <button onClick={onQuestionSubmit}>Hacer pregunta</button>
-      <input
-        type="text"
-        value={question1}
-        onChange={setQuestion1= ()=> (question1) }
-      />
-      <p>Respuesta: {answer} {answer1}</p>
+      <p>Respuesta: {answer}</p>
       
     </div>
   );

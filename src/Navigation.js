@@ -5,8 +5,8 @@ import Menu from "./components/home/Menu";
 import ListComponent from "./components/list/List";
 import Nombres from "./components/nombre/Nombre";
 import ChatScreen from "./components/chat/Gpt";
-import chatPDF from "./components/chatPDF/chatPDF";
-import chatpdf from "./components/chatPDF/chatPDF";
+import ChatPDF from "./components/chatPDF/chatPDF";
+
 
 const Tab = createBottomTabNavigator();
 
